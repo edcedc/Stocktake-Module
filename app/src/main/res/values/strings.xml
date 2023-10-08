@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name" translatable="false">Stocktake Module</string>
+
+    <string name="message_permission_rationale">Grant the following permission to continue the process:\n\n%1$s</string>
+    <string name="message_overlay_failed">Your phone does not allow us to use other applications.</string>
+    <string name="message_permission_always_failed">We need the following permission, please enable it for us in the settings:\n\n%1$s</string>
+    <string name="setting" translateable="false">Setting</string>
+    <string name="resume" translatable="false">Retry</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="out" translatable="false">Exit account</string>
+
+    <string name="account" translatable="false">Account</string>
+    <string name="password" translateable="false" translatable="false">Password</string>
+    <string name="login" translatable="false">LOGIN</string>
+
+    <string name="error_phone" translatable="false">Incorrect username or password</string>
+    <string name="hiht_" translatable="false">Please enter complete</string>
+    <string name="hiht_1" translateable="false">please enter</string>
+
+    <string name="e_english" translatable="false">English</string>
+    <string name="t_chinese" translatable="false">繁體中文</string>
+    <string name="s_chinese" translatable="false">简体中文</string>
+    <string name="host" translatable="false">HOST</string>
+    <string name="company_id" translatable="false">CLIENT ID</string>
+    <string name="please_language" translatable="false">Please select a language</string>
+
+    <string name="release_success" translateable="false">Saved successfully</string>
+    <string name="download" translateable="false">Sync Data</string>
+    <string name="upload" translateable="false">Upload</string>
+
+    <string name="start_date" translateable="false">Start date</string>
+    <string name="end_date" translateable="false">End date</string>
+    <string name="update_date" translateable="false">Update date</string>
+    <string name="remarks" translateable="false">Remarks</string>
+    <string name="progress" translateable="false">Progress</string>
+    <string name="title" translateable="false">Title</string>
+    <string name="org" translateable="false">Org./Co</string>
+    <string name="phone" translateable="false">Phone</string>
+    <string name="location" translateable="false">Location</string>
+
+    <string name="stock_take" translateable="false">Stock Take</string>
+    <string name="system" translateable="false">System</string>
+    <string name="our_login" translateable="false">Log out</string>
+    <string name="full_list" translateable="false">Full list</string>
+    <string name="found" translateable="false">Found</string>
+    <string name="missing" translateable="false">Missing</string>
+    <string name="abnormal" translateable="false">Abnormal</string>
+    <string name="start" translateable="false">Start</string>
+    <string name="stop" translateable="false">Stop</string>
+    <string name="save" translateable="false">Save</string>
+
+    <string name="download1" translateable="false">Downloading data, please keep the network connection, do not exit the application</string>
+
+    <string name="search_assets" translateable="false">Search Rfid</string>
+    <string name="detailed" translateable="false">Details</string>
+    <string name="asset_no" translateable="false">AssetNo</string>
+    <string name="inventory_status" translateable="false">InventoryStatus</string>
+    <string name="label_tag" translateable="false">EPC</string>
+    <string name="order_no" translateable="false">OrderNo</string>
+    <string name="companyid" translateable="false">Companyid</string>
+    <string name="type" translateable="false">Type</string>
+    <string name="status" translateable="false">Status</string>
+    <string name="upload_image" translateable="false">Image</string>
+    <string name="no_labelTag" translateable="false">No LabelTag</string>
+
+    <string name="borrow" translateable="false">Borrow</string>
+    <string name="borrow_date" translateable="false">Borrow Date</string>
+    <string name="telephone" translateable="false">Telephone</string>
+    <string name="external_borrow" translateable="false">External Borrow</string>
+    <string name="internal_borrow" translateable="false">Internal Borrow</string>
+    <string name="disposal" translateable="false">Disposal</string>
+    <string name="book" translateable="false">Book/Publication</string>
+    <string name="archives" translateable="false">Archives</string>
+    <string name="qRCode" translateable="false">QRCode</string>
+    <string name="submit" translateable="false">Submit</string>
+
+    <string name="no_found1" translateable="false">Whether to confirm all uploads.</string>
+    <string name="text1" translateable="false">Saving, please wait</string>
+    <string name="text2" translateable="false">Click to upload</string>
+    <string name="text3" translatable="false">Upload completed</string>
+    <string name="text4" translatable="false">success</string>
+    <string name="text5" translatable="false">No corresponding tags are currently found</string>
+    <string name="text6" translatable="false">No list</string>
+    <string name="text7" translatable="false">Please enter remarks</string>
+
+    <string name="level" translateable="false">Level</string>
+
+</resources>
