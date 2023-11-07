@@ -2,6 +2,7 @@ package com.yyc.stocktake.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.yyc.stocktake.bean.AppRoomDataBase
 import com.yyc.stocktake.bean.db.AssetBean
@@ -151,6 +152,7 @@ class DownloadModel: BaseViewModel() {
                 listData = arrayListOf()
             )
             ToastUtils.showShort(it.message)
+            LogUtils.e(it.throwable)
         })
     }
 

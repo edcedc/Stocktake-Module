@@ -4,8 +4,9 @@ import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import com.google.gson.GsonBuilder
-import com.yc.tea.api.ApiService
+import com.yyc.stocktake.api.ApiService
 import com.yyc.stocktake.network.log.MyLogInterceptor
+import com.yyc.stocktake.util.CacheUtil
 import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.network.BaseNetworkApi
 import me.hgj.jetpackmvvm.network.interceptor.CacheInterceptor
@@ -25,9 +26,12 @@ import java.util.concurrent.TimeUnit
 
 
 //双重校验锁式-单例 封装NetApiService 方便直接快速调用简单的接口
-val apiService: ApiService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
-    NetworkApi.INSTANCE.getApi(ApiService::class.java, ApiService.SERVLET_URL)
-}
+//val apiService: ApiService by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+//    NetworkApi.INSTANCE.getApi(ApiService::class.java, CacheUtil.getUrl())
+//}
+
+val apiService: ApiService
+    get() = NetworkApi.INSTANCE.getApi(ApiService::class.java, CacheUtil.getUrl())
 
 class NetworkApi : BaseNetworkApi() {
 

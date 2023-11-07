@@ -81,7 +81,9 @@
     <string name="text5" translatable="false">目前没有找到对应的标签</string>
     <string name="text6" translatable="false">没有列表</string>
     <string name="text7" translatable="false">请输入备注</string>
+    <string name="text8" translatable="false">上传成功</string>
+    <string name="text9" translatable="false">失败</string>
 
-    <string name="level" translateable="false">Level</string>
+    <string name="level" translateable="false">等级</string>
 
 </resources>

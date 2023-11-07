@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.google.gson.Gson
+import com.yyc.stocktake.R
 import com.yyc.stocktake.SingleLiveEvent
 import com.yyc.stocktake.bean.AppRoomDataBase
 import com.yyc.stocktake.bean.dao.UploadOrderDao
@@ -17,6 +18,7 @@ import com.yyc.stocktake.network.stateCallback.ListDataUiState
 import com.yyc.stocktake.util.CacheUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import me.hgj.jetpackmvvm.base.appContext
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.ext.requestNoCheck
 import java.util.ArrayList
@@ -39,6 +41,9 @@ class UploadModel: BaseViewModel(){
     val companyId = CacheUtil.getUser()?.companyId
 
     val RoNo = CacheUtil.getUser()?.RoNo
+    
+    //分包上传 条数
+    var uploadNum = 1000
 
     fun onRequest() {
         val uploadOrderDao = AppRoomDataBase.get().getUploadOrderDao()
@@ -58,7 +63,7 @@ class UploadModel: BaseViewModel(){
 
          viewModelScope.launch(Dispatchers.IO) {
              val findAll = uploadOrderListDao.findByIdAll(RoNo, companyId, bean.orderId)
-             val batchSize = 1000
+             val batchSize = uploadNum
              val batchedList = findAll.chunked(batchSize)
              isShowDialog.postValue(true)
              for ((index, batch) in batchedList.withIndex()) {
@@ -88,8 +93,10 @@ class UploadModel: BaseViewModel(){
 
                     uploadOrderListDao.deleteById(RoNo, companyId, bean.orderId)
                 }
+                ToastUtils.showShort(appContext.getText(R.string.text4))
+            }else{
+                ToastUtils.showShort(appContext.getText(R.string.text9))
             }
-            ToastUtils.showShort(it.msg)
         }, {
             //请求失败 网络异常回调在这里
             loadingChange.dismissDialog

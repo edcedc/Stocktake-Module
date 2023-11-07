@@ -6,6 +6,7 @@ import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.StringUtils
 import com.blankj.utilcode.util.TimeUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.google.gson.Gson
 import com.yyc.stocktake.R
 import com.yyc.stocktake.bean.AppRoomDataBase
 import com.yyc.stocktake.bean.RfidStateBean
@@ -76,12 +77,14 @@ open class AssetModel : BaseViewModel() {
     }
 
     fun onRequestText(bean: String?) {
+        var asstBean = Gson().fromJson(bean, AssetBean::class.java)
+
         val bean = JSONObject(bean)
         Flowable.fromCallable {
             val list = JSONArray()
             val oneArray = JSONArray()
             val oneData = JSONObject()
-            oneData.put("title", appContext.resources.getString(R.string.detailed))
+//            oneData.put("title", appContext.resources.getString(R.string.detailed))
             val headerkeys: Iterator<String> = bean.keys()
             while (headerkeys.hasNext()) {
                 val headerkey = headerkeys.next()
@@ -106,7 +109,19 @@ open class AssetModel : BaseViewModel() {
                             var threeData = JSONObject()
                             threeData.put("title", headerkey)
                             threeData.put("text", headerValue)
-                            twoArray.put(threeData)
+
+                            if (headerkey.equals("Remarks")){
+                                threeData.put("text", asstBean.Remarks)
+                            }
+                            if (headerkey.equals("FoundStatus")){
+                                threeData.put("text", asstBean.scanStatus)
+                            }
+
+                            if (headerkey.equals("RoNo") || headerkey.equals("AssetNo")){
+
+                            }else{
+                                twoArray.put(threeData)
+                            }
                             twoData.put("list", twoArray)
                         }
                         list.put(twoData)
@@ -116,7 +131,7 @@ open class AssetModel : BaseViewModel() {
                 }
             }
             oneData.put("list", oneArray)
-            list.put(oneData)
+//            list.put(oneData)
             list
         }
             .subscribeOn(Schedulers.io()) //给上面分配了异步线程

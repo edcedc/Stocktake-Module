@@ -2,8 +2,8 @@ package com.yyc.stocktake.ui.frg
 
 import android.os.Bundle
 import com.blankj.utilcode.util.LanguageUtils
-import com.yc.tea.api.ApiService
 import com.yyc.stocktake.R
+import com.yyc.stocktake.api.ApiService
 import com.yyc.stocktake.base.BaseFragment
 import com.yyc.stocktake.databinding.FSettingBinding
 import com.yyc.stocktake.ext.showToast
@@ -89,7 +89,6 @@ class SettingFrg: BaseFragment<SettingModel, FSettingBinding>() {
                 showToast(getString(R.string.hiht_))
                 return
             }
-            ApiService.SERVLET_URL = CacheUtil.getUrl()
             CacheUtil.setUrl(mViewModel.host.get())
             CacheUtil.setCompanyID(mViewModel.companyId.get())
             showToast(getString(R.string.release_success))

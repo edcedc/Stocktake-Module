@@ -82,7 +82,10 @@
     <string name="text5" translatable="false">No corresponding tags are currently found</string>
     <string name="text6" translatable="false">No list</string>
     <string name="text7" translatable="false">Please enter remarks</string>
+    <string name="text8" translatable="false">Upload successful</string>
+    <string name="text9" translatable="false">Fail</string>
 
-    <string name="level" translateable="false">Level</string>
+    <string name="level" translateable="false">level</string>
+    <string name="loading" translatable="false">loading...</string>
 
 </resources>

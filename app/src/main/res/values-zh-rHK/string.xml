@@ -81,8 +81,10 @@
     <string name="text5" translatable="false">目前沒有找到對應的標籤</string>
     <string name="text6" translatable="false">沒有列表</string>
     <string name="text7" translatable="false">請輸入備註</string>
+    <string name="text8" translatable="false">上傳成功</string>
+    <string name="text9" translatable="false">失敗</string>
 
-    <string name="level" translateable="false">Level</string>
+    <string name="level" translateable="false">等級</string>
 
 
 </resources>

@@ -61,21 +61,44 @@ public class AssetTextAdapter2 extends BaseAdapter {
 
             if (object.optString("title").equals("InventoryStatus")){
                 if (object.optInt("text") == 1){
-                    viewHolder.tv_text.setText(object.optString("title") + "：" + act.getText(R.string.found));
+                    viewHolder.tv_text.setText("Inventory Status：" + act.getText(R.string.found));
                 }else {
-                    viewHolder.tv_text.setText(object.optString("title") + "：" + act.getText(R.string.missing));
+                    viewHolder.tv_text.setText("Inventory Status：" + act.getText(R.string.missing));
                 }
             }
             if (object.optString("title").equals("scanStatus")){
                 if (object.optInt("text") == 116){
-                    viewHolder.tv_text.setText("Scan status：RFID");
+                    viewHolder.tv_text.setText("Scan Status：RFID");
                 }else if (object.optInt("text") == 117){
-                    viewHolder.tv_text.setText("Scan status：QRCode");
+                    viewHolder.tv_text.setText("Scan Status：QRCode");
                 }else if (object.optInt("text") == 118){
-                    viewHolder.tv_text.setText("Scan status：Manually");
+                    viewHolder.tv_text.setText("Scan Status：Manually");
                 }else {
-                    viewHolder.tv_text.setText("Scan status：");
+                    viewHolder.tv_text.setText("Scan Status：");
                 }
+            }
+            if (object.optString("title").equals("FoundStatus")){
+                if (object.optInt("text") == 116){
+                    viewHolder.tv_text.setText("Found Status：RFID");
+                }else if (object.optInt("text") == 117){
+                    viewHolder.tv_text.setText("Found Status：QRCode");
+                }else if (object.optInt("text") == 118){
+                    viewHolder.tv_text.setText("Found Status：Manually");
+                }else {
+                    viewHolder.tv_text.setText("Found Status：");
+                }
+            }
+
+            if (object.optString("title").equals("ScanDate")){
+                viewHolder.tv_text.setText("Scan Date：" + object.optString("text"));
+            }
+
+            if (object.optString("title").equals("ScanUser")){
+                viewHolder.tv_text.setText("Scan User：" + object.optString("text"));
+            }
+
+            if (object.optString("title").equals("LabelTag")){
+                viewHolder.tv_text.setText("Label Tag：" + object.optString("text"));
             }
 
         } catch (JSONException e) {

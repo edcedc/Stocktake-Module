@@ -1,4 +1,4 @@
-package com.yc.tea.api
+package com.yyc.stocktake.api
 
 import com.yyc.stocktake.bean.BaseListBean
 import com.yyc.stocktake.bean.BaseResponseBean
@@ -19,8 +19,8 @@ interface ApiService{
     companion object {
 
         private val url =
-            "192.168.2.31"
-//            "47.243.120.137"
+//            "192.168.2.18"
+            "47.243.120.137"
 
         var SERVLET_URL = "http://" +
                 url + "/RFIDInventoryWebService/MobileWebService.asmx/"

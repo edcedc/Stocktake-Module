@@ -11,7 +11,7 @@ import com.yyc.stocktake.databinding.ASplashBinding
 import com.yyc.stocktake.weight.permission.RuntimeRationale
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
-import com.yc.tea.api.ApiService
+import com.yyc.stocktake.api.ApiService
 import com.yyc.stocktake.api.UIHelper
 import com.yyc.stocktake.base.BaseActivity
 import com.yyc.stocktake.util.CacheUtil
@@ -29,14 +29,6 @@ class SplashAct : BaseActivity<BaseViewModel, ASplashBinding>(){
 
     override fun initView(savedInstanceState: Bundle?) {
         setHasPermission()
-
-        //初始化url
-        val url = CacheUtil.getUrl()
-        if (url.isEmpty()){
-            CacheUtil.setUrl(ApiService.SERVLET_URL)
-        }else{
-            ApiService.SERVLET_URL = url
-        }
     }
 
     /**

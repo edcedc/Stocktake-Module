@@ -3,8 +3,10 @@ package com.yyc.stocktake.ui.frg
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.ConvertUtils
+import com.google.gson.Gson
 import com.yyc.stocktake.adapter.AssetDetailsAdapter
 import com.yyc.stocktake.base.BaseFragment
+import com.yyc.stocktake.bean.db.AssetBean
 import com.yyc.stocktake.databinding.BNotTitleRecyclerBinding
 import com.yyc.stocktake.ext.init
 import com.yyc.stocktake.viewmodel.AssetModel

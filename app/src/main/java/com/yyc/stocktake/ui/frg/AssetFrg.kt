@@ -218,7 +218,7 @@ class AssetFrg: BaseFragment<AssetModel, FAssetBinding>() {
         bean.RoNo = roNo
         bean.companyId = companyID
         assetDao.add(bean)
-//        MusicUtils.play()
+        MusicUtils.play()
         withContext(Dispatchers.Main) {
             assetModel.epcUploadData.value = bean
         }
@@ -231,7 +231,7 @@ class AssetFrg: BaseFragment<AssetModel, FAssetBinding>() {
         bean.LabelTag = it.tagId.toString()
         bean.InventoryStatus = INVENTORY_STOCK
         assetDao.update(bean)
-//        MusicUtils.play()
+        MusicUtils.play()
         withContext(Dispatchers.Main) {
             assetModel.epcUploadData.value = bean
         }
