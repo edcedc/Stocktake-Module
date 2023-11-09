@@ -3,10 +3,8 @@ package com.yyc.stocktake.ui.frg
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.ConvertUtils
-import com.google.gson.Gson
 import com.yyc.stocktake.adapter.AssetDetailsAdapter
 import com.yyc.stocktake.base.BaseFragment
-import com.yyc.stocktake.bean.db.AssetBean
 import com.yyc.stocktake.databinding.BNotTitleRecyclerBinding
 import com.yyc.stocktake.ext.init
 import com.yyc.stocktake.viewmodel.AssetModel
@@ -45,10 +43,16 @@ class AssetTextFrg: BaseFragment<AssetModel, BNotTitleRecyclerBinding>() {
         super.createObserver()
         mViewModel.listJsonArray.observe(viewLifecycleOwner, {
             var list = it as JSONArray
-            for (i in list.length() - 1 downTo 0) {
+            list.remove(0)
+            for (i in 0 until list.length()) {
                 val obj = list.optJSONObject(i)
+                if (i == 0) {
+                    continue
+                }
                 jsonArray.put(obj)
             }
+            val obj = list.optJSONObject(0)
+            jsonArray.put(obj)
             adapter!!.notifyDataSetChanged()
         })
     }

@@ -61,16 +61,20 @@ open class AssetModel : BaseViewModel() {
 
     var isShowDialog: MutableLiveData<Boolean> = MutableLiveData()
 
+    val companyId = CacheUtil.getCompanyID()
+
+    val LoginId = CacheUtil.getUser()?.LoginID
+
+    val RoNo = CacheUtil.getUser()?.RoNo
+
     fun onRequest(orderId: String?, status: Int) {
-        val roNo = CacheUtil.getUser()?.RoNo
-        val companyId = CacheUtil.getCompanyID()
         val assetDao = AppRoomDataBase.get().getAssetDao()
         var list: ArrayList<AssetBean>
         viewModelScope.launch(Dispatchers.IO) {
             if (status == -1){
-                list = assetDao.findByIdNoFail(roNo, orderId, companyId) as ArrayList<AssetBean>
+                list = assetDao.findByIdNoFail(RoNo, orderId, companyId) as ArrayList<AssetBean>
             }else{
-                list = assetDao.findById(roNo, orderId, status, companyId) as ArrayList<AssetBean>
+                list = assetDao.findById(RoNo, orderId, status, companyId) as ArrayList<AssetBean>
             }
             listBean.postValue(list)
         }
@@ -113,6 +117,14 @@ open class AssetModel : BaseViewModel() {
                             if (headerkey.equals("Remarks")){
                                 threeData.put("text", asstBean.Remarks)
                             }
+
+                            //扫描状态
+                            if (headerkey.equals("ScanDate")){
+                                threeData.put("text", asstBean.scanTime)
+                            }
+                            if (headerkey.equals("ScanUser")){
+                                threeData.put("text", if (!StringUtils.isEmpty(asstBean.scanTime)) LoginId else "")
+                            }
                             if (headerkey.equals("FoundStatus")){
                                 threeData.put("text", asstBean.scanStatus)
                             }
@@ -145,8 +157,6 @@ open class AssetModel : BaseViewModel() {
     }
 
     fun onUpload(orderId: String?, assetFrg: AssetFrg) {
-        val RoNo = CacheUtil.getUser()?.RoNo
-        val companyId = CacheUtil.getUser()?.companyId
         val assetDao = AppRoomDataBase.get().getAssetDao()
         val uploadOrderDao = AppRoomDataBase.get().getUploadOrderDao()
         val uploadOrderListDao = AppRoomDataBase.get().getUploadOrderListDao()

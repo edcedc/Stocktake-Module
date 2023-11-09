@@ -126,7 +126,7 @@ class DownloadModel: BaseViewModel() {
                                     bean.Remarks = tag.optString("remarks")
                                     bean.InventoryStatus = tag.optInt("InventoryStatus")
                                     if (inventory != null){
-                                        bean.scanStatus = if (inventory.optInt("FoundStatus") == 0) SCAN_STATUS_MANUALLY else inventory.optInt("FoundStatus")
+                                        bean.scanStatus = inventory.optInt("FoundStatus")
                                     }
                                     bean.RoNo = roNo
                                     bean.companyId = companyID
