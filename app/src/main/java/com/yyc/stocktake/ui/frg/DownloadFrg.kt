@@ -1,6 +1,7 @@
 package com.yyc.stocktake.ui.frg
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
@@ -109,8 +110,13 @@ class DownloadFrg : BaseFragment<DownloadModel, FDownloadBinding>() {
                             }
                             LogUtils.i(number, result)
 
-                                if (number >= it.pageSize){
+                            if (number >= it.pageSize){
                                 compositeDisposable?.dispose()
+                                runOnUiThread {
+                                    Handler().postDelayed({
+                                        mDatabind.tvText.text = "Sync Success"
+                                    }, 1200) // 延迟1秒（即1000毫秒）
+                                }
                             }
                         }
                 }

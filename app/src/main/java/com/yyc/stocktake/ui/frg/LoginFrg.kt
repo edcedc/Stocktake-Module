@@ -2,6 +2,7 @@ package com.yyc.stocktake.ui.frg
 
 import android.os.Bundle
 import android.widget.CompoundButton
+import com.blankj.utilcode.util.AppUtils
 import com.yyc.stocktake.R
 import com.yyc.stocktake.api.UIHelper
 import com.yyc.stocktake.base.BaseFragment
@@ -29,8 +30,7 @@ class LoginFrg: BaseFragment<LoginModel, FLoginBinding>() {
         if (user != null && user.Password != null){
             mViewModel.password.set(user.Password)
         }
-
-//        mViewModel.username.set("SAMS")
+        mDatabind.tvVersion.text = "SP INFINITE TECHNOLOGY LTD" + "_V" + AppUtils.getAppVersionName()
     }
 
     override fun createObserver() {

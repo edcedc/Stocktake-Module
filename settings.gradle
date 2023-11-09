@@ -17,5 +17,5 @@ dependencyResolutionManagement {
 
 }
 
-rootProject.name = "Stocktake Module"
+rootProject.name = "Stocktake_Module"
 include ':app'

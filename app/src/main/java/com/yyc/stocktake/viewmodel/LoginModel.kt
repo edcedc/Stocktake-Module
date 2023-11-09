@@ -1,11 +1,13 @@
 package com.yyc.stocktake.viewmodel
 
 import android.view.View
+import android.widget.Switch
 import androidx.databinding.ObservableInt
 import androidx.lifecycle.MutableLiveData
 import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.blankj.utilcode.util.Utils
 import com.yyc.stocktake.R
 import com.yyc.stocktake.api.UIHelper
 import com.yyc.stocktake.bean.BaseResponseBean
@@ -78,8 +80,11 @@ class LoginModel: BaseViewModel() {
                     appViewModel.userInfo.value = data!!
                     UIHelper.startMainAct()
                     ActivityUtils.finishAllActivities()
-                }else{
-                    ToastUtils.showShort(it.msg)
+                }
+                if (it.msg.contains("103")){
+                    ToastUtils.showShort("No Account")
+                }else if (it.msg.contains("104")){
+                    ToastUtils.showShort("The account or password is incorrect")
                 }
             }
         },{

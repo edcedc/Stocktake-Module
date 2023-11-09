@@ -80,6 +80,7 @@
             </FrameLayout>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_text"
                 android:layout_margin="10dp"
                 android:layout_gravity="center"
                 android:text="@string/download1"
