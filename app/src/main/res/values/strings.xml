@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name" translatable="false">Stocktake Module</string>
+
+    <string name="message_permission_rationale">Grant the following permission to continue the process:\n\n%1$s</string>
+    <string name="message_permission_always_failed">We need the following permission, please enable it for us in the settings:\n\n%1$s</string>
+    <string name="setting">Setting</string>
+    <string name="resume">Retry</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="no_data">No Data</string>
+    <string name="click_again">Click to try again</string>
+
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+
+    <string name="error_phone">Incorrect username or password</string>
+    <string name="hiht_">Please enter complete</string>
+    <string name="hiht_1">please enter</string>
+
+    <string name="e_english">English</string>
+    <string name="t_chinese">繁體中文</string>
+    <string name="s_chinese">简体中文</string>
+    <string name="host">HOST</string>
+    <string name="company_id">CLIENT ID</string>
+    <string name="please_language">Please select a language</string>
+
+    <string name="release_success">Saved successfully</string>
+    <string name="download">Sync Data</string>
+    <string name="upload">Upload</string>
+
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="remarks">Remarks</string>
+    <string name="progress">Progress</string>
+
+    <string name="stock_take">Stock Take</string>
+    <string name="system">System</string>
+    <string name="our_login">Log out</string>
+    <string name="full_list">Full list</string>
+    <string name="found">Found</string>
+    <string name="missing">Missing</string>
+    <string name="abnormal">Abnormal</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="save">Save</string>
+
+    <string name="download1">Downloading data, please keep the network connection, do not exit the application</string>
+
+    <string name="search_assets">Search Rfid</string>
+    <string name="detailed">Details</string>
+    <string name="label_tag">EPC</string>
+    <string name="status">Status</string>
+    <string name="upload_image">Image</string>
+    <string name="no_labelTag">No LabelTag</string>
+
+    <string name="no_found1">Whether to confirm all uploads.</string>
+    <string name="text1">Saving, please wait</string>
+    <string name="text2">Click to upload</string>
+    <string name="text3">Upload completed</string>
+    <string name="text4">success</string>
+    <string name="text9">Fail</string>
+
+    <string name="loading">loading...</string>
+
+</resources>

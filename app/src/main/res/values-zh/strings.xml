@@ -1,0 +1,65 @@
+<resources>
+
+    <string name="message_permission_rationale">授予以下权限以继续该过程：\n\n%1$s</string>
+    <string name="message_permission_always_failed">我们需要以下权限，请在设置中为我们启用它：\n\n%1$s</string>
+    <string name="setting">设置</string>
+    <string name="resume">重试</string>
+    <string name="cancel">取消</string>
+
+    <string name="no_data">暂时没有数据</string>
+    <string name="click_again">点击我重试</string>
+
+    <string name="account">帐户</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+
+    <string name="error_phone">用户名或密码不正确</string>
+    <string name="hiht_">请输入完整</string>
+    <string name="hiht_1">请输入</string>
+
+    <string name="e_english">English</string>
+    <string name="t_chinese">繁體中文</string>
+    <string name="s_chinese">简体中文</string>
+    <string name="host">主机</string>
+    <string name="company_id">公司 ID</string>
+    <string name="please_language">请选择语言</string>
+
+    <string name="release_success">保存成功</string>
+    <string name="download">同步数据</string>
+    <string name="upload">上传</string>
+
+    <string name="start_date">开始日期</string>
+    <string name="end_date">结束日期</string>
+    <string name="remarks">备注</string>
+    <string name="progress">进度</string>
+
+    <string name="stock_take">库存盘点</string>
+    <string name="system">系统</string>
+    <string name="our_login">退出账号</string>
+    <string name="full_list">全部</string>
+    <string name="found">在库</string>
+    <string name="missing">缺失</string>
+    <string name="abnormal" transable="false">异常</string>
+    <string name="start">开始</string>
+    <string name="stop">停止</string>
+    <string name="save">保存</string>
+
+    <string name="download1">正在下载数据，请保持网络连接，不要退出应用</string>
+
+    <string name="search_assets">搜索 Rfid</string>
+    <string name="detailed">详细信息</string>
+    <string name="label_tag">EPC</string>
+    <string name="status">状态</string>
+    <string name="upload_image">图片</string>
+    <string name="no_labelTag">没有 LabelTag</string>
+
+    <string name="no_found1">是否确认所有上传。</string>
+    <string name="text1">正在保存，请稍候</string>
+    <string name="text2">点击上传</string>
+    <string name="text3">上传完成</string>
+    <string name="text4">成功</string>
+    <string name="text9">失败</string>
+
+    <string name="loading">上传中...</string>
+
+</resources>
